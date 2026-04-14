@@ -72,8 +72,8 @@ services/
 ## Screenshot
 
 <div align="center">
-  <img src="./assets/screenshots/img1.png" width="200" />
-  <img src="./assets/screenshots/img2.png" width="200" />
+  <img src="./assets/images/img1.jpeg" width="200" />
+  <img src="./assets/images/img2.jpeg" width="200" />
 </div>
 
 ## Cara Menjalankan
