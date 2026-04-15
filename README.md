@@ -110,5 +110,3 @@ Menggunakan React Query `useInfiniteQuery` untuk pagination berita.
 Artikel dapat dibagikan menggunakan `expo-sharing` ke aplikasi lain.
 
 ---
-
-**Dibuat oleh:** Bone - Sistem Informasi
