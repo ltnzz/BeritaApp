@@ -6,9 +6,6 @@ const EXTRA = Constants.expoConfig?.extra;
 const API_KEY = process.env.EXPO_PUBLIC_NEWS_API_KEY;
 const BASE_URL = process.env.EXPO_PUBLIC_NEWS_API_URL;
 
-console.log("API_KEY:", API_KEY);
-console.log("BASE_URL:", BASE_URL);
-
 if (!API_KEY) {
   console.warn("❌ NEWS_API_KEY belum ke-load");
 }
@@ -17,7 +14,7 @@ if (!BASE_URL) {
 }
 
 const api = axios.create({
-  baseURL: BASE_URL || "https://newsapi.org/v2",
+  baseURL: BASE_URL,
   timeout: 10000,
 });
 

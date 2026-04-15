@@ -1,5 +1,5 @@
-import { useEffect, useState, useCallback } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useCallback, useEffect, useState } from "react";
 import type { Article } from "../type";
 
 const STORAGE_KEY = "bookmarks";
@@ -23,12 +23,10 @@ export function useBookmarks() {
     loadBookmarks();
   }, [loadBookmarks]);
 
-  // 🔥 save helper
   const save = async (items: Article[]) => {
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   };
 
-  // 🔥 toggle
   const toggleBookmark = useCallback(async (article: Article) => {
     setBookmarks((prev) => {
       const exists = prev.some((i) => i.url === article.url);
@@ -42,10 +40,9 @@ export function useBookmarks() {
     });
   }, []);
 
-  // 🔥 helper
   const isBookmarked = useCallback(
     (url: string) => bookmarks.some((i) => i.url === url),
-    [bookmarks]
+    [bookmarks],
   );
 
   return {
@@ -53,6 +50,6 @@ export function useBookmarks() {
     toggleBookmark,
     isBookmarked,
     loading,
-    reload: loadBookmarks, // 🔥 penting buat sync antar screen
+    reload: loadBookmarks,
   };
 }

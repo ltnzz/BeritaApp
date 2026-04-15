@@ -213,16 +213,11 @@ const styles = StyleSheet.create({
 
     fontSize: 14,
     color: "#111",
-
     paddingRight: 40,
-
-    // shadow iOS
     shadowColor: "#000",
     shadowOpacity: 0.06,
     shadowRadius: 10,
     shadowOffset: { width: 0, height: 4 },
-
-    // shadow Android
     elevation: 3,
   },
 

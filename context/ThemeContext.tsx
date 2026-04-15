@@ -20,7 +20,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     systemTheme === "dark" ? "dark" : "light",
   );
 
-  // load saved theme
   useEffect(() => {
     const loadTheme = async () => {
       const saved = await AsyncStorage.getItem(KEY);

@@ -7,8 +7,8 @@ import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 import { useColorScheme } from "@/components/useColorScheme";
 import Colors from "@/constants/Colors";
 
-import { useTheme } from "../../context/ThemeContext";
 import { Ionicons } from "@expo/vector-icons";
+import { useTheme } from "../../context/ThemeContext";
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>["name"];
@@ -20,7 +20,6 @@ function TabBarIcon(props: {
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
-  // ✅ FIX INI
   const { isDark, toggleTheme } = useTheme();
 
   return (
@@ -34,11 +33,8 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Beranda",
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="home" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
 
-          // 🔥 DARK MODE BUTTON FIX
           headerRight: () => (
             <Pressable onPress={toggleTheme} style={{ marginRight: 15 }}>
               <Ionicons

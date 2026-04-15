@@ -4,13 +4,13 @@ import {
   DefaultTheme,
   ThemeProvider as NavThemeProvider,
 } from "@react-navigation/native";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
-import { SearchProvider } from "../context/SearchContext";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
+import { SearchProvider } from "../context/SearchContext";
 
 import { ThemeProvider, useTheme } from "../context/ThemeContext";
 
@@ -28,10 +28,8 @@ function NavThemeWrapper({ children }: { children: React.ReactNode }) {
   );
 }
 
-// ❗ prevent splash auto hide
 SplashScreen.preventAutoHideAsync();
 
-// ✅ GLOBAL (biar gak reset)
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

@@ -9,7 +9,6 @@ export default function BookmarksScreen() {
   const router = useRouter();
   const { bookmarks, toggleBookmark, reload } = useBookmarks();
 
-  // 🔥 auto refresh tiap screen dibuka
   useFocusEffect(
     useCallback(() => {
       reload();

@@ -1,14 +1,14 @@
+import { Ionicons } from "@expo/vector-icons";
+import { Image } from "expo-image";
 import React from "react";
 import {
-  View,
+  Pressable,
+  Share,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
-  Share,
-  Pressable,
+  View,
 } from "react-native";
-import { Image } from "expo-image";
-import { Ionicons } from "@expo/vector-icons";
 
 import type { Article } from "../type";
 
@@ -38,7 +38,6 @@ export default function NewsCard({
   onBookmark,
   isBookmarked,
 }: NewsCardProps) {
-  // ✅ FIX: share harus di dalam component
   const onShare = async () => {
     try {
       await Share.share({
@@ -61,7 +60,6 @@ export default function NewsCard({
         contentFit="cover"
       />
 
-      {/* SHARE + BOOKMARK ACTIONS */}
       <View style={styles.actions}>
         <Pressable onPress={onShare} style={styles.actionBtn}>
           <Ionicons name="share-social-outline" size={18} color="#64748B" />
