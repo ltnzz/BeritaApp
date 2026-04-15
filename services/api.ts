@@ -1,7 +1,4 @@
 import axios from "axios";
-import Constants from "expo-constants";
-
-const EXTRA = Constants.expoConfig?.extra;
 
 const API_KEY = process.env.EXPO_PUBLIC_NEWS_API_KEY;
 const BASE_URL = process.env.EXPO_PUBLIC_NEWS_API_URL;

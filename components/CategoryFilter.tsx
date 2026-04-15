@@ -16,7 +16,6 @@ export default function CategoryFilter({
     <View style={styles.container}>
       <Text style={styles.title}>Kategori Berita</Text>
 
-      {/* ROW 1 */}
       <View style={styles.row}>
         {categories.slice(0, 3).map((item) => {
           const isActive = selected === item.value;
@@ -35,7 +34,6 @@ export default function CategoryFilter({
         })}
       </View>
 
-      {/* ROW 2 */}
       <View style={styles.row}>
         {categories.slice(3, 5).map((item) => {
           const isActive = selected === item.value;
